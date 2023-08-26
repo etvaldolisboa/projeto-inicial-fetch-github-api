@@ -7,10 +7,26 @@ const screen = {
                                         <div class="data">
                                             <h1>${user.name ?? 'Não possui nome cadrastado'}</h1>
                                             <p>${user.bio ?? 'Não possui bio cadastrada'}</p>
+
+                                            <div class="follow">
+                                                </i> <span>Seguidores: ${user.followers} </span>
+                                                <span>Seguindo: ${user.following}</span>
+                                            </div>
                                         </div>
                                     </div> `
         let repositoriesItens = ''
-        user.repositories.forEach(repo => repositoriesItens += `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`)
+        user.repositories.forEach(repo =>
+            repositoriesItens += `<li>
+                                    <a href="${repo.html_url}" target="_blank">
+                                        <h3 class="name-repo"> <i class="fa-solid fa-book"></i> ${repo.name}</h3>
+                                        <p>${repo.description ?? "Não possui descrição"}</p>
+                                       
+                                        <div>
+                                            <span> ☆ ${repo.stargazers_count}</span>
+                                            <span> ♡ ${repo.language ?? "Não possui linguagem"}</span>
+                                        </div>
+                                    </a>
+                                </li>`)
 
         if (user.repositories.length > 0) {
             this.userProfile.innerHTML += `<div class="repositories section">   
@@ -19,7 +35,7 @@ const screen = {
                                         </div>`
         }
     },
-    renderNotFound(){
+    renderNotFound() {
         this.userProfile.innerHTML = `<h3>Usuario nao encontrado</h3>`
     }
 }

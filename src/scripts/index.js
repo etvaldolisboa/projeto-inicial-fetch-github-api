@@ -43,4 +43,4 @@ if (userResponse.message === "Not Found") {
     
     screen.renderUser(user)
 }
-getUserData('etvaldolisboa')
+// getUserData('etvaldolisboa')
