@@ -150,7 +150,7 @@ main {
 }
 
 .container .profile-data .repositories .name-repo {
-  color: #4a84b4;
+  color: #2b638f;
   font-weight: bold;
 }
 
@@ -257,10 +257,12 @@ h6 {
 }
 
 @media (max-width: 768px) {
+
   .container header #input-search,
   .container header #btn-search {
     width: 100%;
   }
+
   .container .profile-data {
     display: block;
   }
